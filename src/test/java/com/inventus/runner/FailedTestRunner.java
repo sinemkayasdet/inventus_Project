@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
 
-        glue = "com/cydeo/step_definitions",
+        glue = "com/inventus/step_definitions",
         features = "@target/rerun.txt"
 )
 public class FailedTestRunner {
