@@ -24,6 +24,15 @@ public class HomePage {
     @FindBy(xpath = "(//ul[@class='menu black']/li)[3]/ul/li/a")
     public List<WebElement> firstSubModule;
 
+    @FindBy(id = "edSearch")
+    public WebElement searchBox;
+
+    @FindBy(xpath = "//a[@id='ui-id-2']/strong")
+    public WebElement AfterSearhing;
+
+
+    @FindBy(xpath = "//h1/span[1]")
+    public WebElement productName;
 
     String headerModule;
 
@@ -51,8 +60,8 @@ public class HomePage {
 //
 //    }
     public void verifySubModule(int index, List<String> expected) {
-           String subModule = "(//ul[@class='menu black']/li)[" + index + "]/ul/li/a";
-            List<WebElement> elements =Driver.getDriver().findElements(By.xpath(subModule));
+        String subModule = "(//ul[@class='menu black']/li)[" + index + "]/ul/li/a";
+        List<WebElement> elements = Driver.getDriver().findElements(By.xpath(subModule));
 
         List<String> actualSubModule = new ArrayList<>();
         for (WebElement eachSubModule : elements) {
@@ -70,6 +79,8 @@ public class HomePage {
         }
         Assert.assertEquals(expected, actual);
     }
+
+
 }
 
 
