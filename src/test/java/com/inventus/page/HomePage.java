@@ -1,9 +1,11 @@
 package com.inventus.page;
 
+import com.inventus.utilities.utilities.BrowserUtils;
 import com.inventus.utilities.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -19,16 +21,57 @@ public class HomePage {
     @FindBy(xpath = "//ul[@class='menu black']/li/a")
     public List<WebElement> blackMenuHeader;
 
-
+    @FindBy(xpath = "(//ul[@class='menu black']/li)[3]/ul/li/a")
+    public List<WebElement> firstSubModule;
 
 
     String headerModule;
 
     public void headerModules(String text) {
-        headerModule = "(//li/a[.='" + text + "'])[2]";
-        List<WebElement> elemnt = Driver.getDriver().findElements(By.xpath(headerModule));
-        Driver.getDriver().findElement(By.xpath(headerModule)).click();
+        headerModule = "//ul[@class='menu black']/li/a[.='" + text + "']";
+        WebElement elemnt = Driver.getDriver().findElement(By.xpath(headerModule));
+        Actions actions = new Actions(Driver.getDriver());
+        BrowserUtils.waitFor(10);
+        actions.moveToElement(elemnt).perform();
+        BrowserUtils.waitForVisibility(elemnt, 15);
     }
+
+    public void FirstSubModule(String text) {
+        String FirstSubModuleText = "//ul[@class='menu black']/li/a";
+        WebElement element = Driver.getDriver().findElement(By.xpath(FirstSubModuleText));
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(element).perform();
+
+    }
+
+
+    //    public  void subModule(int numberIndex) {
+//        String subModule = "(//ul[@class='menu black']/li)[" + numberIndex + "]/ul/li/a";
+//        WebElement element = Driver.getDriver().findElement(By.xpath(subModule));
+//
+//    }
+    public void verifySubModule(int index, List<String> expected) {
+           String subModule = "(//ul[@class='menu black']/li)[" + index + "]/ul/li/a";
+            List<WebElement> elements =Driver.getDriver().findElements(By.xpath(subModule));
+
+        List<String> actualSubModule = new ArrayList<>();
+        for (WebElement eachSubModule : elements) {
+            actualSubModule.add(eachSubModule.getText());
+        }
+        BrowserUtils.waitFor(5);
+        Assert.assertEquals(expected, actualSubModule);
+    }
+
+
+    public void headerModuleVerify(List<String> expected) {
+        List<String> actual = new ArrayList<>();
+        for (WebElement each : blackMenuHeader) {
+            actual.add(each.getText());
+        }
+        Assert.assertEquals(expected, actual);
+    }
+}
+
 
 //    public  void verifyHeaderModule(String expected) {
 //        headerModule = "(//li/a[.='" + expected+ "'])[2]";
@@ -40,8 +83,4 @@ public class HomePage {
 //        Assert.assertEquals(expected,actual);
 
 
-}
-
-
-
-
+////span[@id='mainmenu2']/ul//a
