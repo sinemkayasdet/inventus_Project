@@ -17,15 +17,13 @@ public class US2_HeaderModuleStepDefinitions {
     HomePage homePage = new HomePage();
 
 
-
     @Then("Verify the user see the following modules:")
     public void verifyTheUserSeeTheFollowingModules(List<String> expected) {
-
-
-        List<String> actual = new ArrayList<>();
-        for (WebElement each : homePage.blackMenuHeader) {
-            actual.add(each.getText());
-        }
-        Assert.assertEquals(expected,actual);
+        homePage.headerModuleVerify(expected);
     }
 }
+
+
+
+
+
