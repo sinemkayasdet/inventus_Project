@@ -40,3 +40,28 @@ Feature: As a user, I should be accessing all the Sub modules of the Temel Donan
       | KASA FANI               |
       | KASA FANI FILTRESI      |
       | PC SESSIZLEŞTIRME       |
+
+  Scenario: Verify users accessing all the Sub modules of Çevre birimleri
+    Given  user on the login page Inventus
+    When user enter valid username and password
+    And user click the login button
+    And user click "Çevre birimleri" modulles
+    Then Verify the user see the SubModulles  moduless:
+      | LCD EKRAN              |
+      | KULAKLIK               |
+      | KLAVYE-FARE SET        |
+      | KLAVYE                 |
+      | FARE                   |
+      | KABLO                  |
+      | AKSESUAR               |
+      | WEB KAMERASI           |
+      | KESINTISIZ GÜÇ KAYNAĞI |
+
+  Scenario: Verify users accessing all the Sub modules of Ağ ürünleri
+    Given  user on the login page Inventus
+    When user enter valid username and password
+    And user click the login button
+    And user click "Ağ ürünleri" modules
+    Then Verify the user see the SubModulles  moduLles:
+      | KABLOSUZ ADAPTOR |
+      | SWITCH           |
