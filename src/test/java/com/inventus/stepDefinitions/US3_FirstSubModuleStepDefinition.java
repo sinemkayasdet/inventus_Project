@@ -34,4 +34,18 @@ public class US3_FirstSubModuleStepDefinition {
     public void verifyTheUserSeeTheSubModulessModules(List<String> expected) {
         homePage.verifySubModule(4,expected);
     }
+
+
+    @And("user click {string} modulle")
+    public void userClickModulle(String text) {
+        homePage.headerModules(text);
+    }
+
+
+    @Then("Verify the user see the SubModulles  modules:")
+    public void verifyTheUserSeeTheSubModullesModules(List<String> expected) {
+        homePage.verifySubModule(5,expected);
+    }
+
+
 }
