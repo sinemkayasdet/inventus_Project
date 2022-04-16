@@ -63,5 +63,15 @@ Feature: As a user, I should be accessing all the Sub modules of the Temel Donan
     And user click the login button
     And user click "Ağ ürünleri" modules
     Then Verify the user see the SubModulles  moduLles:
-      | KABLOSUZ ADAPTOR |
+      | KABLOSUZ ADAPTÖR |
       | SWITCH           |
+
+
+  Scenario: Verify users accessing all the Sub modules of   Yazılım ve diğer ürünler
+    Given  user on the login page Inventus
+    When user enter valid username and password
+    And user click the login button
+    And user click "Yazılım ve diğer ürünler" moddules
+    Then Verify the user see the Submoddulles  moduLles:
+      | YAZILIM ÜRÜNLERI |
+      | HIZMETLER        |
