@@ -19,7 +19,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/feautures",
         glue = "com/inventus/step_definitions",
         dryRun = false,
-        tags = "@wip",
+        tags = "@smoke",
         publish = true
 )
 public class CukesRunner {

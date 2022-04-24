@@ -23,4 +23,6 @@ public class US4_SearchinVerifyingStepDefinitions {
         home.AfterSearhing.click();
         Assert.assertTrue(home.productName.getText().contains(expected));
     }
+
+
 }

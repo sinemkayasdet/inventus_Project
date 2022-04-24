@@ -1,3 +1,4 @@
+@smoke
 Feature: As a user, I should be search a product and verify it.
 
   Scenario: Verify searching product.

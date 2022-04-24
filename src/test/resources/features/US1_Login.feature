@@ -1,4 +1,4 @@
-@wip
+@smoke
 Feature: As a user, I should be able to log in.
 
   Background:For the scenarios in the feature file, user is expected to be on login page

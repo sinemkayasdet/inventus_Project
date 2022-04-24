@@ -1,3 +1,4 @@
+@smoke
 Feature: As a user, I should be accessing all the Sub modules of the Temel Donanimlar.
 
   Scenario: Verify users accessing all the Sub modules of Temel Donanimlar.

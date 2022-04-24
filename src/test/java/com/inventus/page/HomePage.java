@@ -34,6 +34,10 @@ public class HomePage {
     @FindBy(xpath = "//h1/span[1]")
     public WebElement productName;
 
+    @FindBy(xpath = "(//li/a[.='Ekran kartı'])[2]")
+    public WebElement ekranKartiModule;
+
+
     String headerModule;
 
     public void headerModules(String text) {
